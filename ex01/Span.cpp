@@ -1,4 +1,5 @@
 #include "Span.hpp"
+#include <iostream>
 
 Span::Span()
 {
@@ -43,7 +44,7 @@ void Span::addNumber(unsigned int number)
 
 // There is 2 numbers between 3 and 6 : 4 and 5
 // So the shortest span is 2
-unsigned int Span::shortestSpan()
+unsigned int Span::shortestSpan() const
 {
 	if (_numbers.size() < 2)
 		throw NeedMoreNumbersException();
@@ -54,7 +55,7 @@ unsigned int Span::shortestSpan()
 
 // There is 13 numbers between 3 and 17 : 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
 // So the longest span should be 13 but example shows 14
-unsigned int Span::longestSpan()
+unsigned int Span::longestSpan() const
 {
 	if (_numbers.size() < 2)
 		throw NeedMoreNumbersException();
@@ -80,8 +81,6 @@ const char * Span::NeedMoreNumbersException::what() const throw()
 {
 	return "Not enough numbers in container";
 }
-
-#include <iostream>
 
 void Span::printNumbers() const
 {

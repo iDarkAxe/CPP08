@@ -29,10 +29,11 @@ public:
 	{
 		;
 	}
-	MutantStack(const MutantStack &f)
+	MutantStack(const MutantStack &f) : std::stack<T, Container>(f)
 	{
-		*this = f;
+		;
 	}
+
 	MutantStack &operator=(const MutantStack &other)
 	{
 		if (this != &other)
@@ -53,7 +54,7 @@ public:
 	typename Container::const_iterator begin() const { return this->c.begin(); }
 	typename Container::const_iterator end() const { return this->c.end(); }
 
-	void printNumbers() const;
+	// void printNumbers() const;
 
 	class TooManyNumbersException : public std::exception
 	{
