@@ -30,6 +30,8 @@ Span::Span(const Span &other)
 
 Span &Span::operator=(const Span &other)
 {
+	if (this == &other)
+		return (*this);
 	this->_max_size = other._max_size;
 	this->_numbers = other._numbers;
 	return (*this);
