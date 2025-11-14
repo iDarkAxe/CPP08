@@ -48,7 +48,7 @@ int main()
 	try
 	{
 		std::vector<int>::iterator it = easyfind(vec, 6);
-		std::cout << "Found value at: " << &it << " -> " << *it << std::endl;
+		std::cout << "Found value at: " << &(*it) << " -> " << *it << std::endl;
 	}
 	catch(const std::exception& e)
 	{
