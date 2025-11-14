@@ -220,4 +220,17 @@ void simple_coplien_test()
 		++it;
 		count++;
 	}
+{
+	MutantStack<int>::reverse_iterator it = otherStack.rbegin();
+	MutantStack<int>::reverse_iterator ite = otherStack.rend();
+	std::cout << "Top element is: " << otherStack.top() << std::endl;
+
+	count = 0;
+	while (it != ite)
+	{
+		std::cout << "Value [" << count << "] at " << &(*it) << " is : " << *it << std::endl;
+		++it;
+		count++;
+	}
+}
 }
